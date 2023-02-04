@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/departments")
 public class DepartmentController {
@@ -19,8 +21,8 @@ public class DepartmentController {
     private DepartmentService service;
 
     @GetMapping
-    public ResponseEntity<Page<DepartmentDTO>> findAll(Pageable pageable){
-        Page<DepartmentDTO> list = service.findAllPage(pageable);
+    public ResponseEntity<List<DepartmentDTO>> findAll(){
+        List<DepartmentDTO> list = service.findAllPage();
         return ResponseEntity.ok().body(list);
     }
 }

@@ -32,5 +32,8 @@ public class DepartmentControllerIT {
 		result.andExpect(jsonPath("$[0].name").value("Management"));
 		result.andExpect(jsonPath("$[1].name").value("Sales"));
 		result.andExpect(jsonPath("$[2].name").value("Training"));
+
+		//quando for "$[0].name" se trata de uma List
+		// quando for "$.name" se trata de um Page
 	}
 }

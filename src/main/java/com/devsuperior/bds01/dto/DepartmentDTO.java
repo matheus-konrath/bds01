@@ -2,7 +2,9 @@ package com.devsuperior.bds01.dto;
 
 import com.devsuperior.bds01.entities.Department;
 
-public class DepartmentDTO {
+import java.io.Serializable;
+
+public class DepartmentDTO implements Serializable {
 
     public long id;
     public String name;
